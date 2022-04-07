@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+            color: rgb(255,0,0);
+        }
+        .pagecontent {
+            display: flex;
+            justify-content: center;
+        }
+        #logo {
+            height: 80px;
+        }
+        body{
+            background-color: rgb(210,240,220);
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        #textbox {
+            margin: 60px 120px 60px 120px;
+        }
+        hr {
+            min-width: 100%;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            margin-left: 120px;
+            margin-right: 120px;
+        }
+        .fIcon {
+            height: 80px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .fIcon:hover {
+            background-color: blue;
+        }
+    </style>
+    <title>Über mich</title>
+</head>
+<body>
+    <div class="pagecontent">
+        <h1>Gabriel Hoops</h1>
+    </div>
+    <div class="pagecontent" style="margin-top: 20px; margin-bottom: 20px;">
+        <img id="logo" src="images/bvb.svg">
+    </div>
+    <hr>
+    <div class="pagecontent" id="textbox">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </div>
+    <hr>
+    <div style="display: flex; flex:1; min-height: 4em;"></div>
+    <footer>
+        <a href="mailto:gabriel.hoops@adesso.de">
+            <img class="fIcon" src="images/mail.png">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img class="fIcon" src="images/fb.png">
+        </a>
+    </footer>
+</body>
+</html>
