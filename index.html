@@ -2,69 +2,15 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <style>
-        h1 {
-            color: rgb(255,0,0);
-        }
-        .pagecontent {
-            display: flex;
-            justify-content: center;
-        }
-        .pagecontent2 {
-            display: flex;
-            justify-content: center;
-        }
-        .testcontent {
-            margin: 20px 20px;
-            padding: 15px;
-            color: white;
-        }
-        #logo {
-            height: 80px;
-        }
-        body{
-            //background-color: rgb(210,240,220);
-            background: rgb(2,0,36);
-            background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,54,121,1) 10%, rgba(0,212,255,1) 100%);
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-        #textbox {
-            margin: 40px 140px 40px 140px;
-            padding: 20px 20px;
-            background-color: rgba(255,255,255,0.2);
-            border-radius: 15px 15px 15px 15px;
-        }
-        hr {
-            min-width: 100%;
-            color: white;
-        }
-        footer {
-            display: flex;
-            justify-content: center;
-            margin-left: 120px;
-            margin-right: 120px;
-        }
-        .fIcon {
-            height: 80px;
-            margin-left: 60px;
-            margin-right: 60px;
-        }
-        .fIcon:hover {
-            background: rgb(2,0,36);
-            background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,54,121,1) 10%, rgba(0,212,255,1) 100%);
-            border-radius: 15px 15px 15px 15px;
-        }
-    </style>
     <title>Über mich</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="pagecontent">
         <h1>Gabriel Hoops</h1>
     </div>
     <div class="pagecontent" style="margin-top: 20px; margin-bottom: 20px;">
-        <img id="logo" src="images/bvb.svg">
+        <img id="logo" src="images/bvb.svg" alt="X">
     </div>
     <hr>
     <div class="pagecontent" id="textbox">
@@ -82,10 +28,10 @@
     <div style="display: flex; flex:1; min-height: 4em;"></div>
     <footer>
         <a href="mailto:gabriel.hoops@adesso.de">
-            <img class="fIcon" src="images/mail.png">
+            <img class="fIcon" src="images/mail.png" alt="mail">
         </a>
         <a href="https://www.facebook.com" target="_blank">
-            <img class="fIcon" src="images/fb.png">
+            <img class="fIcon" src="images/fb.png" alt="FB">
         </a>
     </footer>
 </body>

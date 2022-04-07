@@ -1,0 +1,52 @@
+h1 {
+    color: rgb(255,0,0);
+}
+.pagecontent {
+    display: flex;
+    justify-content: center;
+}
+.pagecontent2 {
+    display: flex;
+    justify-content: center;
+}
+.testcontent {
+    margin: 20px 20px;
+    padding: 15px;
+    color: white;
+}
+#logo {
+    height: 80px;
+}
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,54,121,1) 10%, rgba(0,212,255,1) 100%);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+#textbox {
+    margin: 40px 140px 40px 140px;
+    padding: 20px 20px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 15px;
+}
+hr {
+    min-width: 100%;
+    color: white;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+.fIcon {
+    height: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.fIcon:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,54,121,1) 10%, rgba(0,212,255,1) 100%);
+    border-radius: 15px 15px 15px 15px;
+}
