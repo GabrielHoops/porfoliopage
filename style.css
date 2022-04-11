@@ -59,3 +59,20 @@ footer {
 .makewhite {
     color: white;
 }
+.animate {
+
+}
+.animate li {
+    margin: 5px;
+    transition-property:margin-left;
+    transition-duration:0.5s;
+    transition-timing-function:linear;
+}
+.animate li:hover {
+    margin-left: 20px;
+    cursor: pointer;
+}
+.animate li a {
+    color: white;
+    text-decoration: none;
+}
