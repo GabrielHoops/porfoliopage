@@ -65,13 +65,13 @@
             </div>
         </div>
         <div class="placeholder"></div>
-        <form>
+        <form id="frmcontact">
             <div class="row">
                 <div class="col-md-4">
                     Name
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Name" id="name" aria-label="Name" aria-describedby="basic-addon1">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -81,7 +81,7 @@
                     E-Mail-Adresse
                 </div>
                 <div class="col-md-6">
-                    <input type="email" class="form-control" placeholder="E-Mail" aria-label="Name" aria-describedby="basic-addon1">
+                    <input type="email" class="form-control" placeholder="E-Mail" id="mail" aria-label="Name" aria-describedby="basic-addon1">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -91,7 +91,7 @@
                     Nachricht
                 </div>
                 <div class="col-md-6">
-                    <textarea class="form-control" aria-label="Nachricht"></textarea>
+                    <textarea class="form-control" aria-label="Nachricht" id="msg"></textarea>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -101,7 +101,7 @@
                     <a href="about.html">AGBs</a> gelesen
                 </div>
                 <div class="col-md-6">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
+                    <input type="checkbox" id="checkagb" aria-label="Checkbox for following text input">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -111,7 +111,7 @@
                     <div id="math"></div>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" placeholder="Ergebnis" aria-label="Ergebnis" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" id="result" placeholder="Ergebnis" aria-label="Ergebnis" aria-describedby="basic-addon1">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -126,6 +126,7 @@
             </div>
             <input type="hidden" id="resultCap" value="">
         </form>
+        <div id="thx"></div>
     </div>
 </main>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -136,6 +137,33 @@
     var b = Math.round(Math.random() * (max - min)) + min;
     var elem = document.getElementById('math').innerHTML = "Ich bin kein Roboter: "+ a + "+" + b + "=";
     document.getElementById('resultCap').value = a+b;
+
+    document.getElementById('frmcontact').onsubmit = function (e) {
+        var result = document.getElementById('result').value;
+        var resultCap = document.getElementById('resultCap').value;
+        var name = document.getElementById('name').value;
+        var mail = document.getElementById('mail').value;
+        var checkagb = document.getElementById('checkagb');
+
+        if (result != resultCap) {
+            document.getElementById('thx').innerHTML = 'Falsches Ergebnis!';
+            e.preventDefault();
+            return false;
+        } else if (name == '') {
+            document.getElementById('thx').innerHTML = 'Bitte einen Namen angeben!';
+            e.preventDefault();
+            return false;
+        } else if(mail == '') {
+            document.getElementById('thx').innerHTML = 'Leere E-Mail-Adresse angegeben';
+            e.preventDefault();
+            return false;
+        } else if(checkagb.checked == false) {
+            document.getElementById('thx').innerHTML = 'Bitte die AGBs akzeptieren!';
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    }
 </script>
 </body>
 </html>

@@ -72,6 +72,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <canvas id="fungame" width="440" height="360"></canvas>
+                <button type="button" class="btn btn-primary" id="btnstartgame" onclick="startgame();">Start Game</button>
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -119,6 +120,20 @@
         </div>
     </div>
 </main>
+<script type="text/javascript">
+    closegame();
+    function startgame() {
+        escapePressed  = false;
+        document.getElementById('fungame').style.display ="";
+        document.getElementById('btnstartgame').style.display ="none";
+        draw();
+    }
+    function closegame() {
+        document.getElementById('fungame').style.display ="none";
+        document.getElementById('btnstartgame').style.display ="";
+        escapePressed = true;
+    }
+</script>
 <script src="js/test.js"></script>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

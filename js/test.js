@@ -19,6 +19,7 @@ var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
 var lives = 3;
+var escapePressed = false;
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
@@ -38,6 +39,9 @@ function keyDownHandler(e) {
     }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = true;
+    }
+    else if (e.key == "Escape") {
+        escapePressed = true;
     }
 }
 
@@ -161,7 +165,9 @@ function draw() {
 
     x += dx;
     y += dy;
-    requestAnimationFrame(draw);
+    if (escapePressed === false) {
+        requestAnimationFrame(draw);
+    } else {
+        closegame();
+    }
 }
-
-draw();
