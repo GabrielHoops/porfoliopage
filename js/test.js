@@ -28,11 +28,12 @@ for(var c=0; c<brickColumnCount; c++) {
         bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
-
+// Eventlistener für Tastendruck und Mausbewegung
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
+// Ich drücke eine Taste
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = true;
@@ -44,7 +45,7 @@ function keyDownHandler(e) {
         escapePressed = true;
     }
 }
-
+// ich lasse eine Taste los
 function keyUpHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = false;
@@ -54,12 +55,15 @@ function keyUpHandler(e) {
     }
 }
 
+// Ich bewege die Maus
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
     if(relativeX > 0 && relativeX < canvas.width) {
         paddleX = relativeX - paddleWidth/2;
     }
 }
+
+// Ball prallt an Wand oder trifft ein "Brick"
 function collisionDetection() {
     for(var c=0; c<brickColumnCount; c++) {
         for(var r=0; r<brickRowCount; r++) {
@@ -79,6 +83,7 @@ function collisionDetection() {
     }
 }
 
+// Ball malen
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -86,6 +91,8 @@ function drawBall() {
     ctx.fill();
     ctx.closePath();
 }
+
+// Brett malen
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
@@ -93,6 +100,8 @@ function drawPaddle() {
     ctx.fill();
     ctx.closePath();
 }
+
+// Steine malen
 function drawBricks() {
     for(var c=0; c<brickColumnCount; c++) {
         for(var r=0; r<brickRowCount; r++) {
@@ -110,17 +119,22 @@ function drawBricks() {
         }
     }
 }
+
+// Punkte ausgeben
 function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Punkte: "+score, 8, 20);
 }
+
+// Leben ausgeben
 function drawLives() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Leben: "+lives, canvas.width-65, 20);
 }
 
+// "Mainloop"
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
